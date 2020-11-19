@@ -1,5 +1,14 @@
 # Datadog changelog
 
+## 2.7.0
+
+* Changes default values to activate a maximum of built-in features to ease configuration.
+  Notable changes:
+  - Cluster Agent, cluster checks and event collection are activated by default
+  - DatadogMetrics CRD usage is activated by default if ExternalMetrics are used
+  - Dogstatsd non-local traffic is activated by default (hostPort usage is not)
+* Bump Agent version to `7.25.0` and Cluster Agent version to `1.10.0`
+
 ## 2.6.10
 
 * Allow cluster-agent to access apps/daemonsets when admissionController is enabled.

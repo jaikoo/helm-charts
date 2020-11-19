@@ -75,7 +75,7 @@ datadog:
   ## Autodiscovery via Kube Service annotations is automatically enabled
   clusterChecks:
     # datadog.clusterChecks.enabled -- Enable the Cluster Checks feature on both the cluster-agents and the daemonset
-    enabled: false
+    enabled: true
 
   # datadog.nodeLabelsAsTags -- Provide a mapping of Kubernetes Node Labels to Datadog Tags
   nodeLabelsAsTags: {}
@@ -147,14 +147,14 @@ datadog:
 
     # datadog.dogstatsd.nonLocalTraffic -- Enable this to make each node accept non-local statsd traffic (from outside of the pod)
     ## ref: https://github.com/DataDog/docker-dd-agent#environment-variables
-    nonLocalTraffic: false
+    nonLocalTraffic: true
 
   # datadog.collectEvents -- Enables this to start event collection from the kubernetes API
   ## ref: https://docs.datadoghq.com/agent/kubernetes/#event-collection
-  collectEvents: false
+  collectEvents: true
 
   # datadog.leaderElection -- Enables leader election mechanism for event collection
-  leaderElection: false
+  leaderElection: true
 
   # datadog.leaderLeaseDuration -- Set the lease time for leader election in second
   leaderLeaseDuration:  # 60
@@ -247,7 +247,6 @@ datadog:
 
     # datadog.processAgent.processCollection -- Set this to true to enable process collection in process monitoring agent
     ## Requires processAgent.enabled to be set to true to have any effect
-
     processCollection: false
 
   ## Enable systemProbe agent and provide custom configs
@@ -349,7 +348,7 @@ datadog:
 ## ref: https://docs.datadoghq.com/agent/kubernetes/cluster/
 clusterAgent:
   # clusterAgent.enabled -- Set this to true to enable Datadog Cluster Agent
-  enabled: false
+  enabled: true
 
   ## Define the Datadog Cluster-Agent image to work with
   image:
@@ -357,7 +356,7 @@ clusterAgent:
     repository: gcr.io/datadoghq/cluster-agent
 
     # clusterAgent.image.tag -- Cluster Agent image tag to use
-    tag: 1.9.1
+    tag: 1.10.0
 
     # clusterAgent.image.pullPolicy -- Cluster Agent image pullPolicy
     pullPolicy: IfNotPresent
@@ -401,7 +400,7 @@ clusterAgent:
 
     # clusterAgent.metricsProvider.useDatadogMetrics -- Enable usage of DatadogMetric CRD to autoscale on arbitrary Datadog queries
     ## NOTE: You need to install the `DatadogMetric` CRD before
-    useDatadogMetrics: false
+    useDatadogMetrics: true
 
     # clusterAgent.metricsProvider.createReaderRbac -- Create `external-metrics-reader` RBAC automatically (to allow HPA to read data from Cluster Agent)
     createReaderRbac: true
@@ -558,7 +557,7 @@ agents:
 
     # agents.image.tag -- Define the Agent version to use
     ## Use 7-jmx to enable jmx fetch collection
-    tag: 7.24.1
+    tag: 7.25.0
 
     # agents.image.doNotCheckTag -- Skip the version<>chart compatibility check
     ## By default, the version passed in agents.image.tag is checked
@@ -888,7 +887,7 @@ clusterChecksRunner:
 
     # clusterChecksRunner.image.tag -- Define the Agent version to use
     ## Use 7-jmx to enable jmx fetch collection
-    tag: 7.24.1
+    tag: 7.25.0
 
     # clusterChecksRunner.image.pullPolicy -- Datadog Agent image pull policy
     pullPolicy: IfNotPresent
