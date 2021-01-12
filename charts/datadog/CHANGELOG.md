@@ -1,5 +1,9 @@
 # Datadog changelog
 
+## 2.7.0
+
+* Enable the cluster agent and the orchestrator explorer by default.
+
 ## 2.6.8
 
 * Fix `helm lint` by renaming YAML files lacking metadata info.
