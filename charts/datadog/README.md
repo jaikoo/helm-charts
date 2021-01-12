@@ -451,7 +451,7 @@ helm install --name <RELEASE_NAME> \
 | datadog.dd_url | string | `nil` | The host of the Datadog intake server to send Agent data to, only set this option if you need the Agent to send data to a custom URL |
 | datadog.dockerSocketPath | string | `nil` | Path to the docker socket |
 | datadog.dogstatsd.hostSocketPath | string | `"/var/run/datadog/"` | Host path to the DogStatsD socket |
-| datadog.dogstatsd.nonLocalTraffic | bool | `false` | Enable this to make each node accept non-local statsd traffic |
+| datadog.dogstatsd.nonLocalTraffic | bool | `false` | Enable this to make each node accept non-local statsd traffic (from outside of the pod) |
 | datadog.dogstatsd.originDetection | bool | `false` | Enable origin detection for container tagging |
 | datadog.dogstatsd.port | int | `8125` | Override the Agent DogStatsD port |
 | datadog.dogstatsd.socketPath | string | `"/var/run/datadog/dsd.socket"` | Path to the DogStatsD socket |
